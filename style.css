@@ -9,8 +9,8 @@ main {
   align-items: center;
 }
 #container {
-  height: 55vh;
-  width: 55vh;
+  height: 500px;
+  width: 500px;
   border: 1px black solid;
   background-color: antiquewhite;
   box-sizing: border-box;
