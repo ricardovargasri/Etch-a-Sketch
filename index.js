@@ -3,26 +3,28 @@ var numerador = document.querySelector('#numerador');
 
 
 numerador.addEventListener('click', ()=>{
-  cuadros = prompt('numero de cuadros entre 1 y 136:');
+  /* window.location.reload(); */
+  cuadros = prompt('cuantos cuadros por cuanto cuadros entre 1 y 16:');
   if(cuadros < 1){
-    alert('tu estas loco palomaso');
+    alert('No puede ser un solo cuadro');
   }
-  else if(cuadros > 136){
-    alert('mamaguebaso');
+  else if(cuadros > 16){
+    alert('se pasa la medida');
   }
   else{
-    size = 100 / cuadros;
-   for(i = 0;i>cuadros;i++){
-    for (var j = 0; j < cuadros; j++){
-    var cuadro = document.createElement('div');
-    cuadro.className = 'cuadro';
-    cuadro.style.width = size + '%';
-    cuadro.style.height = size + '%';
-    cuadro.style.border = '0.5px solid black';
-    container.appendChild(cuadro);}
     
-   } 
+    cuadros = cuadros**2;
+    for(i = 0; i < cuadros; i++){
+      agregarElemento();
+    };
+   };
   }
-});
+);
 
-
+function agregarElemento(){
+  var newDiv = document.createElement('div');
+  newDiv.style.width = '12px';
+  newDiv.style.height = '12px';
+  newDiv.style.border = '1px solid black';
+  container.appendChild(newDiv);
+};
