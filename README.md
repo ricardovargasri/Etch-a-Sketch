@@ -16,4 +16,4 @@ JavaScript para Manipular los Cuadros: Utiliza JavaScript para crear la cuadríc
 
 CSS para Estilizar y Ajustar la Cuadrícula: Usa CSS para aplicar estilos a la cuadrícula, como colores, bordes y efectos de hover, y para asegurarte de que la cuadrícula se ajuste adecuadamente al contenedor.
 
-Con estos conceptos en mente, puedes empezar a trabajar en la implementación de tu etch-a-sketch y ajustar los detalles según sea necesario. ¡Espero que tengas éxito en tu proyecto!
+Con estos conceptos en mente, puedes empezar a trabajar en la implementación de tu etch-a-sketch y ajustar los detalles según sea necesario. ¡Espero que tengas éxito en tu proyecto!# landinproject
