@@ -1,37 +1,45 @@
 var contenedor = document.querySelector('#container');
 var boton = document.querySelector('#numerador');
-var message = document.querySelector('.mensaje'); // Agrega un punto para seleccionar elementos con la clase 'mensaje'
-var cuadrosNegros = document.querySelectorAll('.black'); // Agrega un punto para seleccionar elementos con la clase 'black'
-var cuadrosMulticolor = document.querySelectorAll('.multicolor'); // Agrega un punto para seleccionar elementos con la clase 'multicolor'
+var message = document.querySelector('.mensaje');
+var cuadrosNegros = document.querySelectorAll('.black'); 
+var cuadrosMulticolor = document.querySelectorAll('.multicolor'); 
 
-boton.addEventListener('click', () => {
-  var medida = prompt('¿Qué medida desea?');
-  contenedor.style.display = 'grid';
-  contenedor.style.gridTemplateColumns = `repeat(${medida}, 1fr)`;
-  contenedor.style.gridTemplateRows = `repeat(${medida}, 1fr)`;
-
-  function addDiv() {
+boton.addEventListener('click', ()=>{
+  
     var cuadrosAnteriores = document.querySelectorAll('.newDiv');
     cuadrosAnteriores.forEach((x) => {
-      contenedor.removeChild(x);
+    contenedor.removeChild(x);
     });
+  let size = getSize();
+  createBoard(size);
+}
+);
+function createBoard(size){
+  contenedor.style.display = 'grid';
+  contenedor.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  contenedor.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    if (medida < 0 || medida > 100) {
-      message.innerHTML = 'Estás loco, amigo.';
-    } else {
-      message.innerHTML = '¡A jugar!';
-      var cuadros = medida * medida;
-      for (i = 0; i < cuadros; i++) {
-        var newDiv = document.createElement('div');
-        newDiv.className = 'newDiv';
-        newDiv.style.border = '1px black solid';
-        contenedor.appendChild(newDiv);
-      }
-    }
+  totalSize = size * size;
+  for (i = 0; i < totalSize; i++) {
+        var div = document.createElement('div');
+        div.addEventListener('mouseover', function(event){
+          event.target.style.backgroundColor = 'black';
+        });
+        contenedor.insertAdjacentElement("beforeend", div);
+      };
+};
+function getSize(){
+  let input = prompt('¿Qué medida desea?');
+  if(input < 0 || input > 100){
+    message.innerHTML = 'Estás loco, amigo.';
   }
+  else{
+    message.innerHTML = '¡A jugar!';
+    return input;
+  }
+  
+};
 
-  addDiv();
-});
 
 
 
