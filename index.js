@@ -1,34 +1,36 @@
-var container = document.querySelector('#container');
-var numerador = document.querySelector('#numerador');
+var contenedor = document.querySelector('#container');
+var boton = document.querySelector('#numerador');
+var message  = document.querySelector('.mensaje');
 
-
-numerador.addEventListener('click', ()=>{
-  cuadros = prompt('cuantos cuadros por cuanto cuadros entre 1 y 16:');
-  if(cuadros < 1){
-    alert('No puede ser un solo cuadro');
-  }
-  else if(cuadros > 16){
-    alert('se pasa la medida');
-  }
-  else{
+boton.addEventListener('click', ()=>{
     
-    cuadros = cuadros**2;
-    container.style.display = 'flex'; // Hacer que el contenedor sea flexible
-    container.style.flexWrap = 'wrap'
-    for(i = 0; i < cuadros; i++){
-      agregarElemento();
-    };
-   };
-  }
-);
+    var medida = prompt('que medida desea: ');
+    contenedor.style.display = 'grid';
+    contenedor.style.gridTemplateColumns = `repeat(${medida}, 1fr)`;
+    contenedor.style.gridTemplateRows = `repeat(${medida}, 1fr)`;
 
-function agregarElemento(){
-  var newDiv = document.createElement('div');
-  newDiv.style.width = '12px';
-  newDiv.style.height = '12px';
-  newDiv.style.border = '0.5px solid black';
-  newDiv.style.boxSizing = 'border-box';
-  newDiv.style.display = 'inline-block';
-  container.appendChild(newDiv);
-};
+
+    function addDiv(){
+        var cuadrosAnteriores = document.querySelectorAll('.newDiv');
+        cuadrosAnteriores.forEach((x) => {
+        contenedor.removeChild(x);
+    });
+    if(medida < 0 || medida > 100){
+        message.innerHTML = 'estas loco mi papa';
+    }
+    else{
+        message.innerHTML = 'a jugar';
+        var cuadros = medida * medida
+        for(i = 0;i < cuadros; i++){
+          var newDiv = document.createElement('div');
+          newDiv.className = 'newDiv';
+          newDiv.style.border = '1px black solid';
+          contenedor.insertAdjacentElement("beforeend",newDiv)  
+        };  
+    };
+    
+    };
+    addDiv();
+});
+
 
