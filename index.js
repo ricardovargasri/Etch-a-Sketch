@@ -6,7 +6,7 @@ var cuadrosMulticolor = document.querySelectorAll('.multicolor');
 
 boton.addEventListener('click', ()=>{
   
-    var cuadrosAnteriores = document.querySelectorAll('.newDiv');
+    var cuadrosAnteriores = document.querySelectorAll('.div');
     cuadrosAnteriores.forEach((x) => {
     contenedor.removeChild(x);
     });
@@ -22,9 +22,10 @@ function createBoard(size){
   totalSize = size * size;
   for (i = 0; i < totalSize; i++) {
         var div = document.createElement('div');
-        div.addEventListener('mouseover', function(event){
+        div.style.border = 'black 0.5px solid';
+       /*  div.addEventListener('mouseover', function(event){
           event.target.style.backgroundColor = 'black';
-        });
+        }); */
         contenedor.insertAdjacentElement("beforeend", div);
       };
 };
