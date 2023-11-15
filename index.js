@@ -1,3 +1,4 @@
+//
 let mensaje = document.querySelector('.mensaje');
 var contenedor = document.querySelector('#container');
 let black = document.querySelector('#black');
