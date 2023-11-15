@@ -19,7 +19,7 @@ main {
   display: grid;
   height: 500px;
   width: 500px;
-  border: 1px black solid;
+  border: 3px black solid;
   
   box-sizing: border-box;
 } 
