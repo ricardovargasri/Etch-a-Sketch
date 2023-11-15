@@ -1,3 +1,5 @@
+//
+let mensaje = document.querySelector('.mensaje');
 var contenedor = document.querySelector('#container');
 var boton = document.querySelector('#numerador');
 var message = document.querySelector('.mensaje'); // Agrega un punto para seleccionar elementos con la clase 'mensaje'
